@@ -1,90 +1,113 @@
 .card-item {
     background: #fff;
     border-radius: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.card-inner {
+    /* Flex layout for desktop */
     display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+
+    /* Relative sizing */
+    width: 80vw;
+    max-width: 1200px;
+    height: auto;
+    min-height: 70vh;
+
+
+    padding: 2rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
 }
 
-/* LEFT */
-.card-left {
+/* LEFT SIDE */
+.card-info {
     flex: 1;
-    padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-right: 2rem;
 }
 
-.card-title {
-    font-size: 2rem;
+.card-title-container h3 {
     color: #021d38;
-    margin-bottom: 1rem;
+    letter-spacing: -0.06rem;
+    margin: 0 0 2rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
 }
 
-.card-description {
-    font-size: 1.2rem;
+.card-description-container {
+    font-size: 1.1rem;
     color: #555;
-    opacity: 0.8;
+    opacity: 0.7;
     line-height: 1.4;
-    max-width: 90%;
+    text-align: left;
 }
 
-/* RIGHT */
-.card-right {
+/* RIGHT SIDE */
+.card-video-frame {
     flex: 1;
-    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    border-radius: 0 2rem 2rem 0;
+    border-radius: 1.5rem;
+    overflow: visible;
 }
 
-.card-right-content {
+.card-video-container {
     width: 90%;
-    height: 80%;
+    /*height: 70%;*/
+    /*max-height: 45vh;*/
     background: #fff;
-    border-radius: 1.2rem;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 25px;
+    border-radius: 1rem;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: none;
 }
 
 .card-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1.2rem;
+    border-radius: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .card-inner {
-        flex-direction: column;
-    }
-
+/* 📱 Responsive design */
+@media (max-width: 900px) {
     .card-item {
+        flex-direction: column;
+        width: 90vw;
         height: auto;
+        padding: 1.5rem;
     }
 
-    .card-right {
-        border-radius: 0 0 2rem 2rem;
-        margin-top: 2rem;
+    .card-info {
+        padding-right: 0;
+        padding-bottom: 1rem;
     }
 
-    .card-right-content {
-        height: 200px;
+    .card-title-container h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-description-container {
+        font-size: 1rem;
+    }
+
+    .card-video-frame {
+        margin-top: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .card-video-container {
+        max-height: none;
     }
 }
