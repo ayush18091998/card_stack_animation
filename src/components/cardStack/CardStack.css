@@ -1,37 +1,35 @@
 .card-stack {
-    /* Create breathing room for scroll-based sticky effect */
-    margin-top: 0vh;
+    /* Large scroll area to allow cards to stack */
+    position: relative;
+    width: 100%;
+    margin-top: 0;
     margin-bottom: 10vh;
-    height: 120rem;
+
+    /* Height defines how long the scroll lasts.
+       Can be tuned based on number of cards */
+    height: calc(55rem * 3); /* e.g. 3 cards — adjust dynamically if needed */
 }
 
-/* Each card wrapper (one scroll section) */
+/* Each card wrapper (sticky section) */
 .card-container {
-    /*position: sticky;*/
-    /*bottom: 0rem;*/
-    height: 53rem;
+    position: sticky;
+    bottom: 0; /* stick to bottom as we scroll */
+    height: 55rem; /* consistent height for stacking */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Card visuals (optional scaling for depth) */
-/*.card-item {*/
-/*    width: 70vw;*/
-/*    height: 75vh;*/
-/*    border-radius: 2rem;*/
-/*    background: #fff;*/
-/*    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);*/
-/*    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);*/
-/*    will-change: transform;*/
-/*}*/
-
-
-
-/* Responsive tweak */
+/* For responsive devices */
 @media (max-width: 900px) {
-    .card-item {
-        width: 90vw;
-        height: 70vh;
+    .card-stack {
+        height: auto; /* disable sticky stacking on small screens */
+    }
+
+    .card-container {
+        position: static; /* normal flow for mobile */
+        height: auto;
+        margin-bottom: 4rem;
     }
 }
+
