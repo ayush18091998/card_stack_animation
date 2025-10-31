@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# 🗣️  Card Stack Section
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React implementation of  “Speak Tutor” section, featuring a sticky scroll card stack effect and clean UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ⚙️ Tech Stack
 
-### `npm start`
+- **React (Vite or CRA)** — component-based structure
+- **CSS3 / Flexbox / Media Queries** — layout and responsiveness
+- **HTML5 Video** — for embedded looping previews
+- **JavaScript (ES6+)** — logic and variable injection
+- **No animation libraries** — all effects achieved using pure CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Project Setup
 
-### `npm test`
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/ayush18091998/card_stack_animation.git
+   cd speak-tutor-clone
+   git checkout feature/cards_scroll_animation
+   npm install
+   npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Component Structure
+src/
+├── App.tsx               # Main layout with title, description, CardStack, and footer
+├── App.css              # Global styles and section layout
+├── components/
+│   └── cardStack/
+│       ├── CardStack.js  # Renders stacked cards with sticky scroll behavior
+│       ├── CardStack.css  # Handles stacking logic and sticky positioning
+│       ├── Card.js       # Displays title, description, and video
+│       ├── Card.css       # Card visuals and responsive layout
+│       └── CardData.js    # Static array of card data
 
-### `npm run build`
+## Structure Summary
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+App.js → main section (header → cards → footer)
+CardStack → scroll container; manages z-index and CSS variables
+Card → visual content for each card
+CardData → defines text and video for each card
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Responsiveness & Layout Behavior
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Responsive Design
 
-### `npm run eject`
+Responsiveness is achieved through a combination of:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+CSS media queries (@media (max-width: 900px))
+Flexible sizing units (vw, vh, rem)
+Fluid typography and container widths
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Key behavior:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+On large screens:
+Cards are displayed side-by-side with sticky scroll behavior.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+On small screens (<900px):
+Cards stack vertically. 
+Font sizes and paddings adjust using rem and vw units.
 
-## Learn More
+## Scroll Animation (Sticky Stack)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Implemented using CSS only — no JS animations.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Each .card-container uses:
+position: sticky;
+bottom: -400px;
+
+
+
+## License
+MIT © 2025 — Free for educational and personal use.
