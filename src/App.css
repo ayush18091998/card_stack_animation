@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 8rem 1.5rem; /* was 10rem 5px — better for mobile */
+  padding: 6rem 5px 4rem;
 }
 
 .header-container {

@@ -4,17 +4,14 @@
     width: 100%;
     margin-top: 0;
     margin-bottom: 10vh;
-
-    /* Height defines how long the scroll lasts.
-       Can be tuned based on number of cards */
-    height: calc(55rem * 3); /* e.g. 3 cards — adjust dynamically if needed */
+    height:149rem
 }
 
 /* Each card wrapper (sticky section) */
 .card-container {
     position: sticky;
-    bottom: 0; /* stick to bottom as we scroll */
-    height: 55rem; /* consistent height for stacking */
+    bottom: -407px; /* stick to bottom as we scroll */
+    height: 49rem; /* consistent height for stacking */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +24,8 @@
     }
 
     .card-container {
-        position: static; /* normal flow for mobile */
+        position: sticky;
+        bottom: -120px; /* stick to bottom as we scroll */
         height: auto;
         margin-bottom: 4rem;
     }
