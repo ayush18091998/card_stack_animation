@@ -7,7 +7,7 @@ const CardStack = () => {
 return (
     <div className="card-stack">
         {cards.map((card, index) => (
-            <div className="card-container" key={index}>
+            <div className="card-container" key={index} style={{zIndex: cards.length-index -1 }}>
                 <Card
                     title={card.title}
                     description={card.description}

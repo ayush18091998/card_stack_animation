@@ -1,14 +1,15 @@
 .card-stack {
     /* Create breathing room for scroll-based sticky effect */
-    margin-top: 50vh;
-    margin-bottom: 100vh;
+    margin-top: 0vh;
+    margin-bottom: 10vh;
+    height: 120rem;
 }
 
 /* Each card wrapper (one scroll section) */
 .card-container {
-    position: sticky;
-    top: 0;
-    height: 100vh;
+    /*position: sticky;*/
+    /*bottom: 0rem;*/
+    height: 53rem;
     display: flex;
     justify-content: center;
     align-items: center;
