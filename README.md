@@ -23,53 +23,60 @@ A responsive React implementation of  “Speak Tutor” section, featuring a sti
    git checkout feature/cards_scroll_animation
    npm install
    npm start
+   ```
 
-## Component Structure
+## 🧩 Component Structure
+
+```plaintext
 src/
-├── App.tsx               # Main layout with title, description, CardStack, and footer
+├── App.tsx              # Main layout with title, description, CardStack, and footer
 ├── App.css              # Global styles and section layout
 ├── components/
 │   └── cardStack/
-│       ├── CardStack.js  # Renders stacked cards with sticky scroll behavior
+│       ├── CardStack.js   # Renders stacked cards with sticky scroll behavior
 │       ├── CardStack.css  # Handles stacking logic and sticky positioning
-│       ├── Card.js       # Displays title, description, and video
+│       ├── Card.js        # Displays title, description, and video
 │       ├── Card.css       # Card visuals and responsive layout
 │       └── CardData.js    # Static array of card data
+```
 
-## Structure Summary
+### Structure Summary
 
-App.js → main section (header → cards → footer)
-CardStack → scroll container; manages z-index and CSS variables
-Card → visual content for each card
-CardData → defines text and video for each card
+- **App.tsx** → Main layout for the Speak Tutor section (header → cards → footer)
+- **CardStack** → Manages z-index and scroll stacking logic
+- **Card** → Defines the card UI (title, description, and video)
+- **CardData** → Holds static content for cards
 
-## Responsiveness & Layout Behavior
 
-# Responsive Design
+##  Responsiveness & Layout Behavior
+
+### Responsive Design
 
 Responsiveness is achieved through a combination of:
 
-CSS media queries (@media (max-width: 900px))
-Flexible sizing units (vw, vh, rem)
-Fluid typography and container widths
+- **CSS media queries** (`@media (max-width: 900px)`)
+- **Flexible sizing units** (`vw`, `vh`, `rem`)
+- **Fluid typography and container widths**
 
-Key behavior:
+#### Key Behavior
 
-On large screens:
-Cards are displayed side-by-side with sticky scroll behavior.
+- **Large screens**
+    - Cards are displayed side-by-side with sticky scroll behavior.
+- **Small screens (<900px)**
+    - Cards stack vertically.
+    - Font sizes and paddings adjust using `rem` and `vw` units.
+---
 
-On small screens (<900px):
-Cards stack vertically. 
-Font sizes and paddings adjust using rem and vw units.
+## 🌀 Scroll Animation (Sticky Stack)
 
-## Scroll Animation (Sticky Stack)
+Implemented using **pure CSS** — no JavaScript animations.
 
-Implemented using CSS only — no JS animations.
+Each `.card-container` uses:
 
-Each .card-container uses:
+```css
 position: sticky;
 bottom: -400px;
-
+```
 
 
 ## License
